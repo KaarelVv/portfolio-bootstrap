@@ -1,0 +1,17 @@
+/* === Hero Heading === */
+.hero-heading {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--bs-primary);
+  transition: all 0.3s ease;
+}
+body.theme-light .hero-heading {
+  font-size: 3.5rem;
+  color: #111;
+  text-shadow: none;
+}
+body.theme-dark .hero-heading {
+  font-size: 2.8rem;
+  color: #0dcaf0;
+  animation: glow-flicker 2s ease-in-out infinite;
+}

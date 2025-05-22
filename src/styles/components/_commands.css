@@ -1,0 +1,32 @@
+/* === Command Hint Line === */
+.command-hint {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+body.theme-light .command-hint {
+  color: #555;
+}
+.command-hint .prompt {
+  color: #888;
+}
+body.theme-light .command-hint .prompt {
+  color: #999;
+}
+
+/* === Command List === */
+.command-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.command-list code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0 0.4rem;
+  border-radius: 4px;
+}
+body.theme-light .command-list code {
+  background: rgba(0, 0, 0, 0.05);
+}
+body.theme-dark .command-list code {
+  background: #fff;
+}

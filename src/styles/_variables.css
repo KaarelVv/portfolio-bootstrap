@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #04080f;
+  --bs-primary: #0dcaf0;
+  --bs-secondary: #666666;
+  --bs-card-bg: #04080f;
+  --bs-card-color: #000000;
+  --bs-border-color: #cccccc;
+
+  font-family: 'Fira Code', monospace;
+}

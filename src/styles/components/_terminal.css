@@ -1,0 +1,71 @@
+/* === Terminal Container === */
+.terminal-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #0dcaf0;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0dcaf0;
+  max-width: 700px;
+  min-height: 150px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  word-break: break-word;
+}
+body.theme-light .terminal-box {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.terminal-line {
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: baseline;
+}
+.terminal-line.error {
+  color: #ff4d4f;
+}
+body.theme-light .terminal-line.error {
+  color: #d32f2f;
+}
+
+.prompt {
+  margin-right: 0.5rem;
+}
+body.theme-dark .prompt {
+  color: #00ff99;
+}
+body.theme-light .prompt {
+  color: #444;
+}
+
+.terminal-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  outline: none;
+  width: 100%;
+  padding-left: 1ch;
+}
+.terminal-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+body.theme-light .terminal-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* .terminal-input:focus + .terminal-cursor {
+  display: none;
+} */
+
+

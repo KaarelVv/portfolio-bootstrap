@@ -6,6 +6,7 @@
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
+ 
   
 }
 /* Back-up. Move later */
@@ -41,6 +42,7 @@ body.theme-dark .nav-link {
   margin-left: 1rem;
   padding-left: 1rem;
   
+  
 }
 
 body.theme-light .navbar-toggler-icon{
@@ -52,8 +54,17 @@ body.theme-light .dropdown-menu-custom{
   color: #000;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   margin-left: auto;
+  margin-left: auto;
   margin-right: 0;
+  
+}
+body.theme-dark .dropdown-menu-custom{
+  color: #000;
+  border-radius: 0.5rem;
+  box-shadow: -3px 5px  8px #0dcaf0;
+  margin-left: auto;
+  margin-right: 0;
+  
 }
 
 .navbar-toggler.active {

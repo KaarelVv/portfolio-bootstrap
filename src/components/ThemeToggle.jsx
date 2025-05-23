@@ -23,14 +23,13 @@ useEffect(() => {
   }
 }, [dark]);
 
-
   return (
     <button
       onClick={() => setDark(!dark)}
-      className="btn btn-outline-info btn-sm ms-2"
+      className="btn btn-outline-info btn-sm"
       aria-label="Toggle theme"
     >
-      {dark ? "🌙 Dark" : "☀️ Light"}
+      {dark ? "☀️ Lights on" : "🌙 Lights off"}
     </button>
   );
 }

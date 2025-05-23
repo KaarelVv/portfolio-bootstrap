@@ -24,6 +24,7 @@ body.theme-dark {
 
 body.theme-dark .theme-header {
   background-color: rgb(4, 8, 15, 0.3); /* dark bluish glass tint */
+  
 }
 
 body.theme-light .theme-header {

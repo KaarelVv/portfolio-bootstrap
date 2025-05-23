@@ -26,7 +26,6 @@ body.theme-dark .page-card {
   border-radius: 1rem;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  
   border: 1px solid var(--bs-border-color);
 }
 

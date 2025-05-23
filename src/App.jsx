@@ -29,12 +29,19 @@ export default function App() {
     location.pathname === path ? "nav-link active" : "nav-link dark";
 
   const closeNavbar = () => {
-    const collapseElement = navbarCollapseRef.current;
-    if (collapseElement) {
-      const bsCollapse = Collapse.getInstance(collapseElement) || new Collapse(collapseElement);
-      if (collapseElement.classList.contains('show')) {
-        bsCollapse.hide();
-      }
+    // Only run on small screens (Bootstrap uses 992px as lg breakpoint)
+    if (window.innerWidth >= 992) return;
+
+    const el = navbarCollapseRef.current;
+    if (!el) return;
+
+    if (!el._bsCollapse) {
+      el._bsCollapse = Collapse.getInstance(el);
+    }
+
+    if (el.classList.contains('show')) {
+      el._bsCollapse.hide?.(); // optional chaining in case hide isn't async
+      setNavbarOpen(false);
     }
   };
 
@@ -74,7 +81,7 @@ export default function App() {
             <div className="dropdown-menu-custom">
               <ul className="navbar-nav mb-2 mb-lg-0 ">
                 <li className="nav-item"><Link to="/" className={isActive("/")} onClick={closeNavbar}><i className="bi bi-house-door me-1"></i> Home</Link></li>
-                <li className="nav-item"><Link to="/projects" className={isActive("/projects")} onClick={closeNavbar}><i className="bi bi-kanban me-1"></i> Projects</Link></li>
+                <li className="nav-item"><Link to="/projects" className={isActive("/projects")} ><i className="bi bi-kanban me-1"></i> Projects</Link></li>
                 <li className="nav-item"><Link to="/about" className={isActive("/about")} onClick={closeNavbar}><i className="bi bi-person-badge me-1"></i> About</Link></li>
                 <li className="nav-item"><Link to="/contact" className={isActive("/contact")} onClick={closeNavbar}><i className="bi bi-envelope me-1"></i> Contact</Link></li>
                 <li className="nav-item"><Link to="/resume" className={isActive("/resume")} onClick={closeNavbar}><i className="bi bi-file-earmark-person me-1"></i> Resume</Link></li>

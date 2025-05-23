@@ -1,5 +1,5 @@
 import { useLocation, Routes, Route, Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import ThemeToggle from './components/ThemeToggle';
 
 // Import your route components
@@ -9,16 +9,21 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import FadeOnly from "./components/FadeOnly";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Collapse } from "bootstrap";
 
 export default function App() {
   const location = useLocation();
   const navbarCollapseRef = useRef(null);
-const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
-
+  useEffect(() => {
+    const el = document.getElementById('navbar');
+    if (el?.classList.contains('show')) {
+      setNavbarOpen(true);
+    }
+  }, []);
 
   const isActive = (path) =>
     location.pathname === path ? "nav-link active" : "nav-link dark";
@@ -33,24 +38,27 @@ const [navbarOpen, setNavbarOpen] = useState(false);
     }
   };
 
-const toggleNavbar = () => {
-  const collapseElement = navbarCollapseRef.current;
-  if (collapseElement) {
-    const bsCollapse = Collapse.getInstance(collapseElement) || new Collapse(collapseElement, { toggle: false });
-    if (collapseElement.classList.contains('show')) {
-      bsCollapse.hide();
+  const toggleNavbar = () => {
+    const el = navbarCollapseRef.current;
+    if (!el) return;
+
+    if (!el._bsCollapse) {
+      el._bsCollapse = Collapse.getInstance(el) || new Collapse(el, { toggle: false });
+    }
+
+    if (el.classList.contains('show')) {
+      el._bsCollapse.hide();
       setNavbarOpen(false);
     } else {
-      bsCollapse.show();
+      el._bsCollapse.show();
       setNavbarOpen(true);
     }
-  }
-};
+  };
   return (
     <div className="min-vh-100 d-flex flex-column ">
       {/* Header / Navbar */}
       <header className="theme-header fixed-top">
-        <nav className="navbar navbar-expand-md navbar-dark container-fluid">
+        <nav className="navbar navbar-expand-md container-fluid">
           <Link to="/" className="navbar-brand site-logo text-info fw-bold">
             Kaarel Viilvere
           </Link>
@@ -64,14 +72,14 @@ const toggleNavbar = () => {
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="mainNavbar" ref={navbarCollapseRef}>
             <div className="dropdown-menu-custom">
-            <ul className="navbar-nav mb-2 mb-lg-0 ">
-              <li className="nav-item"><Link to="/" className={isActive("/")} onClick={closeNavbar}><i className="bi bi-house-door me-1"></i> Home</Link></li>
-              <li className="nav-item"><Link to="/projects" className={isActive("/projects")} onClick={closeNavbar}><i className="bi bi-kanban me-1"></i> Projects</Link></li>
-              <li className="nav-item"><Link to="/about" className={isActive("/about")} onClick={closeNavbar}><i className="bi bi-person-badge me-1"></i> About</Link></li>
-              <li className="nav-item"><Link to="/contact" className={isActive("/contact")} onClick={closeNavbar}><i className="bi bi-envelope me-1"></i> Contact</Link></li>
-              <li className="nav-item"><Link to="/resume" className={isActive("/resume")} onClick={closeNavbar}><i className="bi bi-file-earmark-person me-1"></i> Resume</Link></li>
-              <li className="nav-item d-flex align-items-center ms-3" onClick={closeNavbar}><ThemeToggle /></li>
-            </ul>
+              <ul className="navbar-nav mb-2 mb-lg-0 ">
+                <li className="nav-item"><Link to="/" className={isActive("/")} onClick={closeNavbar}><i className="bi bi-house-door me-1"></i> Home</Link></li>
+                <li className="nav-item"><Link to="/projects" className={isActive("/projects")} onClick={closeNavbar}><i className="bi bi-kanban me-1"></i> Projects</Link></li>
+                <li className="nav-item"><Link to="/about" className={isActive("/about")} onClick={closeNavbar}><i className="bi bi-person-badge me-1"></i> About</Link></li>
+                <li className="nav-item"><Link to="/contact" className={isActive("/contact")} onClick={closeNavbar}><i className="bi bi-envelope me-1"></i> Contact</Link></li>
+                <li className="nav-item"><Link to="/resume" className={isActive("/resume")} onClick={closeNavbar}><i className="bi bi-file-earmark-person me-1"></i> Resume</Link></li>
+                <li className="nav-item d-flex align-items-center ms-3" onClick={closeNavbar}><ThemeToggle /></li>
+              </ul>
             </div>
           </div>
         </nav>

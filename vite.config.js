@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/portfolio/",
+    esbuild: {
+    jsxInject: `import React from 'react'`, // ensures it's auto-injected
+  },
 })

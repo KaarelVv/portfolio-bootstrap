@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const resumePdf = "/portfolio/resume.pdf"; // Place your resume.pdf in the public folder
 

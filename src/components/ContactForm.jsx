@@ -7,20 +7,30 @@ export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [theme, setTheme] = useState("light");
 
- useEffect(() => {
-  const updateTheme = () => {
-    const localTheme = localStorage.getItem("theme");
-    setTheme(localTheme === "dark" ? "dark" : "light");
-  };
+  useEffect(() => {
+    // Stub grecaptcha in testing environment
+    if (import.meta.env.MODE === "development" || import.meta.env.MODE === "test") {
+      if (window.Cypress && !window.__mockCaptchaToken__) {
+        window.grecaptcha = {
+          ready: (cb) => cb(),
+          execute: () => Promise.resolve(""),
+        };
+      }
+    }
+    const updateTheme = () => {
+      const localTheme = localStorage.getItem("theme");
+      setTheme(localTheme === "dark" ? "dark" : "light");
+    };
 
-  // On load
-  updateTheme();
 
-  // Listen for changes in localStorage (from ThemeToggle)
-  window.addEventListener("storage", updateTheme);
+    // On load
+    updateTheme();
 
-  return () => window.removeEventListener("storage", updateTheme);
-}, []);
+    // Listen for changes in localStorage (from ThemeToggle)
+    window.addEventListener("storage", updateTheme);
+
+    return () => window.removeEventListener("storage", updateTheme);
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,6 +44,7 @@ export default function ContactForm() {
     }
 
     try {
+      console.log("captchaToken:", captchaToken);
       const res = await fetch("https://vso24viilvere.ita.voco.ee/sendMail.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -51,6 +62,8 @@ export default function ContactForm() {
       }
     } catch (err) {
       alert("Error sending message.");
+      console.error(err);
+      console.log("Submitting with token:", captchaToken);
     }
   };
 
@@ -110,7 +123,7 @@ export default function ContactForm() {
       </div>
       <div className="terminal-line">
         <ReCAPTCHA
-        key={theme}
+          key={theme}
           sitekey="6Ldpmj8rAAAAAE86fAYdT1dBHhIj_HNmABzLz_9R"
           theme={theme}
           onChange={setCaptchaToken}

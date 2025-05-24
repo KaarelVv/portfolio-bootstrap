@@ -1,0 +1,59 @@
+/* === Modal Overlay === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* === Modal Content === */
+.modal-content {
+  background-color: var(--bs-card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 0.3s ease-out;
+  position: relative;
+}
+
+body.theme-dark .modal-content {
+  color: var(--bs-primary);
+}
+
+body.theme-light .modal-content {
+  color: black;
+}
+
+/* === Responsive Modal === */
+@media (max-width: 576px) {
+  .modal-content {
+    padding: 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* === Modal Close Button === */
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+body.theme-dark .modal-close-btn {
+  color: white;
+}
+
+body.theme-light .modal-close-btn {
+  color: rgb(0, 0, 0);
+}

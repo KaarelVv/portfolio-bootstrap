@@ -2,28 +2,46 @@ import { useState } from "react";
 
 import ProjectCard from "../components/ProjectCard";
 import CardWrapper from "../components/CardWrapper";
+import ProjectModal from "../components/ProjectModal";
 
 const projects = [
   {
-    title: "First landing page",
-    description: "This is firs real web application i built.",
-    github: "https://github.com/",
+    title: "First Landing Page",
+    description: "Developed a landing page using HTML and CSS, focusing on clean layout, accessibility, and semantic structure. This project served as an introduction to front-end best practices.",
     url: "https://kaarel.tech/",
-    tech: ["Html", "Javascript"]
+    tech: ["HTML", "CSS", "JavaScript"],
+    role: "Solo Developer",
+    features: [
+      "Modular, semantic HTML structure",
+      "Clean styling with CSS"
+    ]
   },
   {
     title: "Voting App",
-    description: "Voting app for Hackaton we managed using google sheet as backend.",
+    description: "Built a real-time voting app for a hackathon using React and Google Apps Script.",
     github: "https://github.com/",
     url: "https://hindamine.ita.voco.ee/",
-    tech: ["React", "Google Sheet", "Google Script"]
+    tech: ["React", "Google Sheets", "Google Apps Script", "JavaScript", "HTML", "CSS", "Bootstrap"],
+    role: "Full-Stack Developer",
+    features: [
+      "Live voting with Google Sheets as backend",
+      "Multiple user input handling",
+      "Dynamic result display with auto-refresh"
+    ],
+    learnings: [
+      "Enhanced collaboration and teamwork in a hackathon setting",
+      "Integrated Google Apps Script with React",
+      "Real-time data handling with Google Sheets",
+      "Improved problem-solving skills under time constraints"
+
+    ]
   },
   {
     title: "Small WordPress WebShop",
-    description: "Based on woo commerce.",
-    github: "https://github.com/",
+    description: "My first dive into e-commerce with WordPress! I used WooCommerce and Bricks to create a fully responsive store, with a clean layout, custom theme tweaks, and working cart and checkout pages.",
+    role: "Solo Developer",
     url: "https://vso24viilvere.ita.voco.ee/",
-    tech: ["WordPress", "WooCommerce", "Bricks"]
+    tech: ["WordPress", "WooCommerce", "Bricks", "Custom CSS", "Responsive Design"]
   }
 ];
 
@@ -37,126 +55,90 @@ export default function Projects() {
   const filteredProjects = selectedTech
     ? projects.filter((p) => p.tech.includes(selectedTech))
     : projects;
-return (
-  <CardWrapper >
-    {/* Sticky header with heading + filters */}
-    <div className="sticky-header">
-      <div className="container">
-        <h2 className="hero-heading text-start mb-3">My Projects</h2>
-        <div className="filter-bar mb-5">
-          {/* Desktop filters */}
-          <div className="d-none d-sm-flex flex-wrap gap-2">
-            <button
-              onClick={() => setSelectedTech(null)}
-              className={`filter-btn ${!selectedTech ? "active" : ""}`}>
-              All
-            </button>
-            {allTechs.map((tech) => (
+  return (
+    <CardWrapper >
+      <div className="sticky-header">
+        <div className="container">
+          <h2 className="hero-heading text-start mb-3">My Projects</h2>
+          <div className="filter-bar mb-5">
+
+            {/* Desktop filters */}
+            <div className="d-none d-sm-flex flex-wrap gap-2">
               <button
-                key={tech}
-                onClick={() => setSelectedTech(tech)}
-                className={`filter-btn ${selectedTech === tech ? "active" : ""}`}>
-                {tech}
+                onClick={() => setSelectedTech(null)}
+                className={`filter-btn ${!selectedTech ? "active" : ""}`}>
+                All
               </button>
-            ))}
-          </div>
-          {/* Mobile dropdown */}
-          <div className="d-flex d-sm-none flex-column gap-2">
-            <button
-              className="btn btn-outline-secondary"
-              onClick={() => setFilterOpen(!filterOpen)}
-            >
-              {selectedTech || "Filter by tech"} ▾
-            </button>
-            {filterOpen && (
-              <div className="dropdown-list mt-2 d-flex flex-column gap-2">
+              {allTechs.map((tech) => (
                 <button
-                  onClick={() => {
-                    setSelectedTech(null);
-                    setFilterOpen(false);
-                  }}
-                  className={`filter-btn ${!selectedTech ? "active" : ""}`}
-                >
-                  All
+                  key={tech}
+                  onClick={() => setSelectedTech(tech)}
+                  className={`filter-btn ${selectedTech === tech ? "active" : ""}`}>
+                  {tech}
                 </button>
-                {allTechs.map((tech) => (
+              ))}
+            </div>
+
+            {/* Mobile dropdown */}
+            <div className="d-flex d-sm-none flex-column gap-2">
+              <button
+                className="btn btn-outline-secondary"
+                onClick={() => setFilterOpen(!filterOpen)}
+              >
+                {selectedTech || "Filter by tech"} ▾
+              </button>
+              {filterOpen && (
+                <div className="dropdown-list mt-2 d-flex flex-column gap-2">
                   <button
-                    key={tech}
                     onClick={() => {
-                      setSelectedTech(tech);
+                      setSelectedTech(null);
                       setFilterOpen(false);
                     }}
-                    className={`filter-btn ${selectedTech === tech ? "active" : ""}`}
+                    className={`filter-btn ${!selectedTech ? "active" : ""}`}
                   >
-                    {tech}
+                    All
                   </button>
-                ))}
-              </div>
-            )}
+                  {allTechs.map((tech) => (
+                    <button
+                      key={tech}
+                      onClick={() => {
+                        setSelectedTech(tech);
+                        setFilterOpen(false);
+                      }}
+                      className={`filter-btn ${selectedTech === tech ? "active" : ""}`}
+                    >
+                      {tech}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    {/* Project cards */}
-    <div className="container">
-      <div className="projects-grid ">
-        {filteredProjects.map((p, i) => (
-          <ProjectCard
-            key={p.title}
-            {...p}
-            className="fade-in-up"
-            style={{ animationDelay: `${i * 0.05}s` }}
-            onClick={() => setActiveProject(p)}
-          />
-        ))}
-      </div>
-    </div>
+      {/* Project cards */}
+      <div className="container">
+        <div className="projects-grid ">
+          {filteredProjects.map((p, i) => (
+            <div className="project-card-wrapper">
+              <ProjectCard
+                key={p.title}
+                {...p}
 
-    {/* Modal */}
-    {activeProject && (
-      <div className="modal-overlay" onClick={() => setActiveProject(null)}>
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <button
-            className="modal-close-btn"
-            onClick={() => setActiveProject(null)}
-            aria-label="Close"
-          >
-            &times;
-          </button>
-          <h3>{activeProject.title}</h3>
-          <p>{activeProject.description}</p>
-          <div className="mb-3 d-flex flex-wrap gap-2">
-            {activeProject.tech.map((tag) => (
-              <span key={tag} className="tech-badge">{tag}</span>
-            ))}
-          </div>
-          <div className="d-flex gap-2 mt-4">
-            {activeProject.github && (
-              <a
-                href={activeProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline-light btn-sm"
-              >
-                GitHub
-              </a>
-            )}
-            {activeProject.url && (
-              <a
-                href={activeProject.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-glow btn-sm"
-              >
-                View Live
-              </a>
-            )}
-          </div>
+                style={{ animationDelay: `${i * 0.05}s` }}
+                onClick={() => setActiveProject(p)}
+              />
+            </div>
+          ))}
         </div>
       </div>
-    )}
-  </CardWrapper>
-);
+      
+      {/* Modal */}
+      {activeProject && (
+        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      )}
+    </CardWrapper>
+  );
 
 }

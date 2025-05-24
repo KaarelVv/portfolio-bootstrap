@@ -9,13 +9,14 @@ export default function About() {
     "➜ I enjoy making subtle interactions with animations and understanding the code deeply—not just using it.",
     "➜ My goal is to grow from a solid junior developer into a confident and capable contributor.",
     "",
-    "➜ Tech Stack",
+    "root:/ Tech Stack",
     "$ skills --list",
     "- JavaScript",
     "- React",
     "- Bootstrap",
     "- Node.js",
     "- SQL",
+    "- Git",
   ];
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function About() {
           <div className="terminal-line" key={i}>
             {line.startsWith("➜") && <span className="prompt">➜</span>}
             {line.startsWith("$") && <span className="prompt">$</span>}
-            {line.startsWith("-") && <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+            {line.startsWith("-") && <span className="promt">-</span>}
             <span>{line.replace(/^[➜$-]\s*/, "")}</span>
           </div>
         ))}

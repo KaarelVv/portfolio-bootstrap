@@ -13,6 +13,16 @@ body.theme-dark {
   --bs-card-color: #dbd3d3;
   --bs-border-color: #333;
 }
+/* Optional: Themed global card shadows */
+body.theme-dark .card {
+  box-shadow: -20px 20px #0dcaf0;
+}
+
+body.theme-light .card {
+  box-shadow: +20px 20px #000;
+}
+
+
 
 .theme-header {
   backdrop-filter: blur(10px);

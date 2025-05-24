@@ -9,7 +9,7 @@ const Resume = () => (
             <a
                 href={resumePdf}
                 download="My_Resume.pdf"
-                className="btn btn-primary"
+                className="btn btn-live btn-glow"
                 target="_blank"
                 rel="noopener noreferrer"
             >

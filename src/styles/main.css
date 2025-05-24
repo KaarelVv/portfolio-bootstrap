@@ -2,7 +2,7 @@
 @import './_base.css';
 @import './_themes.css';
 @import './_layout.css';
-
+@import './components/_footer.css';
 @import './_animations.css';
 @import './components/_nav.css';
 @import './components/_buttons.css';
@@ -11,3 +11,4 @@
 @import './components/_terminal.css';
 @import './components/_commands.css';
 @import './components/_responsive.css';
+@import './components/_modal.css';

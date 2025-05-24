@@ -36,43 +36,51 @@ export default function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!captchaToken) {
-      alert("Please complete the CAPTCHA.");
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!captchaToken) {
+    alert("Please complete the CAPTCHA.");
+    return;
+  }
 
-    try {
-      console.log("captchaToken:", captchaToken);
-      const res = await fetch("https://vso24viilvere.ita.voco.ee/sendMail.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, token: captchaToken }),
-      });
+  try {
+    const formData = new URLSearchParams();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("message", form.message);
+    formData.append("token", captchaToken);
 
-      if (res.ok) {
-        setForm({ name: "", email: "", message: "" });
-        setCaptchaToken("");
-        setSent(true);
-        setTimeout(() => setSent(false), 4000);
-      } else {
-        const text = await res.text();
-        alert("Error: " + text);
-      }
-    } catch (err) {
-      alert("Error sending message.");
-      console.error(err);
-      console.log("Submitting with token:", captchaToken);
+    const res = await fetch("https://vso24viilvere.ita.voco.ee/sendMail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData.toString(),
+    });
+
+    if (res.ok) {
+      setForm({ name: "", email: "", message: "" });
+      setCaptchaToken("");
+      setSent(true);
+      setTimeout(() => setSent(false), 4000);
+    } else {
+      const text = await res.text();
+      alert("Error: " + text);
     }
-  };
+  } catch (err) {
+    alert("Error sending message.");
+    console.error(err);
+  }
+};
 
   const TerminalPrompt = ({ label }) => (
-    <span className="prompt">~/contact &gt; {label}</span>
+    <span className="prompt">~/ &gt; {label}</span>
   );
 
   return (
     <form onSubmit={handleSubmit} className="terminal-box mt-3">
+      <div className="terminal-line">input.message.below </div>
+      
       <div className="terminal-line">
         <TerminalPrompt label="Name" />
       </div>
@@ -131,7 +139,7 @@ export default function ContactForm() {
       </div>
 
       <div className="terminal-line mt-3">
-        <button type="submit" className="btn btn-glow">Send</button>
+        <button type="submit" className="btn btn-live btn-glow">Send</button>
       </div>
 
       {sent && (

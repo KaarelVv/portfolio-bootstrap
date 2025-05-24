@@ -61,6 +61,7 @@ export default function App() {
       setNavbarOpen(true);
     }
   };
+
   return (
     <div className="min-vh-100 d-flex flex-column ">
       {/* Header / Navbar */}
@@ -93,7 +94,7 @@ export default function App() {
       </header>
       {/* Animated Content */}
       <main className="flex-grow-1 d-flex justify-content-center align-items-center no-mobile-padding">
-        <div className="w-100" style={{ maxWidth: "1000px", minHeight: "calc(100vh - 100px)", marginTop: "100px", transition: "all 0.3s ease" }}>
+        <div className="w-100" style={{ maxWidth: "1000px", minHeight: "80vh ", marginTop: "100px", transition: "all 0.3s ease" }}>
           <AnimatePresence mode="wait" initial={false}>
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<FadeOnly><Home /></FadeOnly>} />
@@ -105,6 +106,16 @@ export default function App() {
           </AnimatePresence>
         </div>
       </main>
+      <footer className="theme-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col text-center">
+              <p>© 2025 Kaarel Viilvere</p>
+              <p>All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function About() {
     "➜ I enjoy making subtle interactions with animations and understanding the code deeply—not just using it.",
     "➜ My goal is to grow from a solid junior developer into a confident and capable contributor.",
     "",
-    "root:/ Tech Stack",
+    "root:/cd/skills",
     "$ skills --list",
     "- JavaScript",
     "- React",

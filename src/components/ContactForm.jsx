@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           required
           className="terminal-input"
-          placeholder="Enter your name"
+          placeholder="Enter your name here"
         />
       </div>
 
@@ -106,7 +106,7 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           required
           className="terminal-input"
-          placeholder="Enter your email"
+          placeholder="Enter your email here"
         />
       </div>
 
@@ -122,7 +122,7 @@ const handleSubmit = async (e) => {
           required
           className="terminal-input"
           style={{ resize: "none" }}
-          placeholder="Type your message..."
+          placeholder="Type your message here..."
         />
       </div>
 

@@ -121,12 +121,11 @@ export default function Projects() {
       <div className="container">
         <div className="projects-grid ">
           {filteredProjects.map((p, i) => (
-            <div className="project-card-wrapper">
+            <div className="project-card-wrapper fade-in-up">
               <ProjectCard
                 key={p.title}
                 {...p}
-
-                style={{ animationDelay: `${i * 0.05}s` }}
+                style={{ animationDelay: `${i * 0.05}s`}}
                 onClick={() => setActiveProject(p)}
               />
             </div>

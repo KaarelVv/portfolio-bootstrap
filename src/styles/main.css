@@ -1,14 +1,16 @@
-@import './_variables.css';
-@import './_base.css';
-@import './_themes.css';
-@import './_layout.css';
+@import './core/_variables.css';
+@import './core/_base.css';
+@import './core/_animations.css';
+@import './global/_themes.css';
+@import './global/_layout.css';
+@import './global/_responsive.css';
 @import './components/_footer.css';
-@import './_animations.css';
+
 @import './components/_nav.css';
 @import './components/_buttons.css';
 @import './components/_badges.css';
 @import './components/_hero.css';
 @import './components/_terminal.css';
 @import './components/_commands.css';
-@import './components/_responsive.css';
+
 @import './components/_modal.css';

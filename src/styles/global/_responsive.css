@@ -1,6 +1,7 @@
 /* === Responsive (Mobile) === */
 
 @media (max-width: 576px) {
+
   /* General layout adjustments */
   body,
   html {
@@ -30,6 +31,18 @@
     align-items: flex-start;
   }
 
+.terminal-line.small {
+  white-space: normal;
+  word-break: normal;
+}
+
+.terminal-line.small code {
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+
   /* Project and card tweaks */
   .page-card,
   .project-card {
@@ -42,6 +55,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* Mobile navbar dropdown customization */
   .dropdown-menu-custom {
     margin-left: auto;
@@ -64,7 +78,8 @@
   body.theme-dark .dropdown-menu-custom {
     background-color: rgb(4, 8, 15, 0.8);
   }
-    body.theme-light .dropdown-menu-custom {
+
+  body.theme-light .dropdown-menu-custom {
     background-color: rgba(255, 255, 255, 0.9);
   }
 }

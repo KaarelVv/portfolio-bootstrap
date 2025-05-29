@@ -94,7 +94,12 @@ export default function Home() {
 
               {/* Hint line */}
               <div className="terminal-line small">
-                <span className="prompt">#</span> Available: <code>projects</code>, <code>contact</code>, <code>resume</code>
+                <span className="prompt">#</span> Available:
+                <div className="hint-group">
+                  <code>projects </code>
+                  <code>contact </code>
+                  <code>resume</code>
+                </div>
               </div>
             </>
           )}

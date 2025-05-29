@@ -40,7 +40,7 @@ const projects = [
     title: "Small WordPress WebShop",
     description: "My first dive into e-commerce with WordPress! I used WooCommerce and Bricks to create a fully responsive store, with a clean layout, custom theme tweaks, and working cart and checkout pages.",
     role: "Solo Developer",
-    url: "https://vso24viilvere.ita.voco.ee/",
+    url: "https://vso24viilvere.ita.voco.ee/webShop",
     tech: ["WordPress", "WooCommerce", "Bricks", "Custom CSS", "Responsive Design"]
   }
 ];

@@ -81,8 +81,13 @@ body.theme-dark .project-card .card-text {
 }
 
 body.theme-dark .project-card .card-title {
-  color: #fff;
+  color: #0dcaf0;
   border-bottom: #ffffff1f solid 1px;
+}
+body.theme-light .project-card .card-title {
+  font-size: 2rem;
+  color: #000000;
+  border-bottom: #00000073 solid 1px;
 }
 
 

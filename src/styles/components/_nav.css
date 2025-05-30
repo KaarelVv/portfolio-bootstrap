@@ -86,8 +86,8 @@ body.theme-dark .navbar-toggler.active {
   background-color: rgba(255, 255, 255, 0.856);
   border-color: #0dcaf0;
 }
-body.theme-dark .navbar-toggler {
-  border-color: rgb(13, 202, 240, 0.5);
+body.theme-dark .navbar-toggler  {
+  border-color: rgb(13, 202, 240);
 }
 
 

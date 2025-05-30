@@ -18,6 +18,8 @@ export default function App() {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+let currentYear = new Date().getFullYear()
+
   useEffect(() => {
     const el = document.getElementById('navbar');
     if (el?.classList.contains('show')) {
@@ -110,8 +112,10 @@ export default function App() {
         <div className="container">
           <div className="row">
             <div className="col text-center">
-              <p>© 2025 Kaarel Viilvere</p>
+              <div className="footer-text">
+              <p>© {currentYear}  Kaarel Viilvere</p>
               <p>All rights reserved.</p>
+            </div>
             </div>
           </div>
         </div>

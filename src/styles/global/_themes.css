@@ -48,10 +48,18 @@ body.theme-dark .nav-link i {
 body.theme-light .nav-link i {
   display: inline;
 }
-body.theme-dark p {
+/* body.theme-dark p {
   color: #f1f1f1;
-}
+} */
 
 body.theme-dark h2 {
   color: #f1f1f1;
+}
+
+body.theme-dark .footer-text {
+  color: #0dcaf0;
+}
+
+body.theme-light .footer-text {
+  color: #000000;
 }

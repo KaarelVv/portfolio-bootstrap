@@ -35,7 +35,7 @@ export default function About() {
 
   return (
     <CardWrapper>
-      <h2 className="hero-heading text-start mb-3 fade-in-up">About Me</h2>
+      <h2 className="hero-heading mb-3 fade-in-up">About Me</h2>
       <div className="terminal-box mt-3 fade-in-up-slow">
         {lines.slice(0, visibleLines).map((line, i) => (
           <div className="terminal-line" key={i}>

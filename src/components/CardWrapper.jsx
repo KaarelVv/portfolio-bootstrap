@@ -1,6 +1,6 @@
 export default function CardWrapper({ children }) {
   return (
-<div
+    <div
       className="card page-card p-4 p-md-5 m-5"
       style={{
         maxWidth: "1600px",

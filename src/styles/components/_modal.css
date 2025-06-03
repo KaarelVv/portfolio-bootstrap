@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  
 }
 
 /* === Modal Content === */
@@ -20,8 +21,20 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   animation: fadeInUp 0.3s ease-out;
   position: relative;
+  border: 1px solid var(--bs-border-color);
 }
 
+.modal-title {
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+body.theme-dark .modal-list{
+  color: aliceblue;
+}
+
+body.theme-dark .modal-descripion{
+  color: #f8f6f6;
+}
 body.theme-dark .modal-content {
   color: var(--bs-primary);
 }
@@ -57,3 +70,5 @@ body.theme-dark .modal-close-btn {
 body.theme-light .modal-close-btn {
   color: rgb(0, 0, 0);
 }
+
+

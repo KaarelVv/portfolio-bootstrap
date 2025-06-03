@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           required
           className="terminal-input"
-          placeholder="Enter your name here"
+          placeholder="Enter your name here..."
         />
       </div>
 
@@ -106,7 +106,7 @@ const handleSubmit = async (e) => {
           onChange={handleChange}
           required
           className="terminal-input"
-          placeholder="Enter your email here"
+          placeholder="Enter your email here..."
         />
       </div>
 

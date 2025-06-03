@@ -24,8 +24,8 @@ body.theme-light .tech-badge {
 }
 body.theme-dark .skill-badge,
 body.theme-dark .tech-badge {
-  background: linear-gradient(135deg, #0dcaf0, #6610f2);
-  color: #000;
+  background: linear-gradient(300deg, #0dcaf0, #6610f2);
+  color: #ffffff;
 }
 .skill-badge:hover,
 .tech-badge:hover {

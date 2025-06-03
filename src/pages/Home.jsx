@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <CardWrapper alignTop>
-      <div className="text-start">
+  
         <h1 className="hero-heading mb-4 fade-in-up">helloWorld!</h1>
 
         <div className="terminal-box mb-4 fade-in-up-slow">
@@ -96,9 +96,9 @@ export default function Home() {
               <div className="terminal-line small">
                 <span className="prompt">#</span> Available:
                 <div className="hint-group">
-                  <code>projects </code>
-                  <code>contact </code>
-                  <code>resume</code>
+                  <code> projects</code>
+                  <code> contact</code>
+                  <code> resume</code>
                 </div>
               </div>
             </>
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
           )}
         </div>
-      </div>
+
     </CardWrapper>
   );
 }

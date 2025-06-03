@@ -59,7 +59,7 @@ export default function Projects() {
     <CardWrapper >
       <div className="sticky-header">
         <div className="container">
-          <h2 className="hero-heading text-start mb-3">My Projects</h2>
+          <h2 className="hero-heading mb-3">My Projects</h2>
           <div className="filter-bar mb-5">
 
             {/* Desktop filters */}

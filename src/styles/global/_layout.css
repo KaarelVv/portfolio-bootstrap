@@ -1,13 +1,14 @@
 /* === General Cards === */
 .page-card {
- 
+
   max-width: 960px;
   margin: 0 auto;
   border-radius: 0.75rem;
   border: 1px solid var(--bs-border-color);
-  
+
   color: var(--bs-card-color);
-  box-shadow: none; /* Remove the shadow unless you want it */
+  box-shadow: none;
+  /* Remove the shadow unless you want it */
   transition: background-color 0.3s ease;
 }
 
@@ -16,19 +17,10 @@ body.theme-light .page-card {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Dark theme glassy edge if needed */
-body.theme-dark .page-card {
-  backdrop-filter: blur(8px);
-}
 
 /* Optional: Add subtle shadow to page-card in light theme */
 body.theme-light .page-card {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
-}
-
-/* Optional: Glassy effect in dark theme */
-body.theme-dark .page-card {
-  backdrop-filter: blur(8px);
 }
 
 /* Optional: Themed global card shadows */
@@ -40,15 +32,16 @@ body.theme-light .card {
   box-shadow: +20px 20px #000;
 }
 
-.project-card-wrapper{
-background-color:#0dcaf0;
-border-radius: 1rem;
+.project-card-wrapper {
+  background-color: #0dcaf0;
+  border-radius: 1rem;
 }
 
-body.theme-light .project-card-wrapper{
-background-color:#000000;
-border-radius: 1rem;
+body.theme-light .project-card-wrapper {
+  background-color: #000000;
+  border-radius: 1rem;
 }
+
 /* === Project Cards === */
 .project-card {
   border-radius: 1rem;
@@ -58,15 +51,16 @@ border-radius: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.theme-light .project-card  {
-  background-color:#ffffff ;
+body.theme-light .project-card {
+  background-color: #ffffff;
 }
-body.theme-dark .project-card  {
-  background-color:#04080f ;
+
+body.theme-dark .project-card {
+  background-color: #04080f;
 }
 
 body.theme-light .project-card:hover {
-   transform: translateX(-10px) translateY(-10px);
+  transform: translateX(-10px) translateY(-10px);
   transition: transform 0.3s ease;
 }
 
@@ -84,8 +78,9 @@ body.theme-dark .project-card .card-title {
   color: #0dcaf0;
   border-bottom: #ffffff1f solid 1px;
 }
+
 body.theme-light .project-card .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #000000;
   border-bottom: #00000073 solid 1px;
 }
@@ -100,7 +95,7 @@ body.theme-light .project-card .card-title {
   padding: 1rem;
 }
 
-.projects-grid > * {
+.projects-grid>* {
   width: 100%;
   max-width: 640px;
 }

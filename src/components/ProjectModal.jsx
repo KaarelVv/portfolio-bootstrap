@@ -11,12 +11,9 @@ export default function ProjectModal({ project, onClose }) {
         >
           &times;
         </button>
-
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-
+        <h3 className="modal-title">{project.title}</h3>
+        <p className="modal-descripion">{project.description}</p>
         {project.role && <p><strong>Role:</strong> {project.role}</p>}
-
         {project.features?.length > 0 && (
           <ul className="modal-list">
             {project.features.map((feature, i) => (
@@ -24,7 +21,6 @@ export default function ProjectModal({ project, onClose }) {
             ))}
           </ul>
         )}
-
         {project.learnings?.length > 0 && (
           <div className="mt-3">
             <p><strong>Key Learnings:</strong></p>
@@ -35,13 +31,11 @@ export default function ProjectModal({ project, onClose }) {
             </ul>
           </div>
         )}
-
         <div className="mb-3 d-flex flex-wrap gap-2 mt-3">
           {project.tech.map((tag) => (
             <span key={tag} className="tech-badge">{tag}</span>
           ))}
         </div>
-
         <div className="d-flex gap-2 mt-4">
           {project.github && (
             <a

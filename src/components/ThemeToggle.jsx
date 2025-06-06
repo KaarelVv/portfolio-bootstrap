@@ -24,12 +24,13 @@ useEffect(() => {
 }, [dark]);
 
   return (
-    <button
-      onClick={() => setDark(!dark)}
-      className="btn btn-outline-info btn-sm"
-      aria-label="Toggle theme"
-    >
-      {dark ? "☀️ Lights on" : "🌙 Lights off"}
-    </button>
+<button
+  onClick={() => setDark(!dark)}
+  className="btn btn-outline-info btn-sm no-warp"
+  aria-label="Toggle theme"
+>
+  <span className="full-text">{dark ? "☀️ Lights on" : "🌙 Lights off"}</span>
+  <span className="emoji-only">{dark ? "☀️" : "🌙"}</span>
+</button>
   );
 }

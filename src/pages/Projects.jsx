@@ -125,7 +125,7 @@ export default function Projects() {
               <ProjectCard
                 key={p.title}
                 {...p}
-                style={{ animationDelay: `${i * 0.05}s`}}
+                style={{ animationDelay: `${i * 0.5}s`}}
                 onClick={() => setActiveProject(p)}
               />
             </div>

@@ -6,7 +6,7 @@
   transition: all 0.3s ease;
 }
 body.theme-light .hero-heading {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #111;
   text-shadow: none;
 }

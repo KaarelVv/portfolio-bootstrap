@@ -68,8 +68,8 @@ let currentYear = new Date().getFullYear()
     <div className="min-vh-100 d-flex flex-column ">
       {/* Header / Navbar */}
       <header className="theme-header fixed-top">
-        <nav className="navbar navbar-expand-md container-fluid">
-          <Link to="/" className="navbar-brand site-logo text-info fw-bold">
+        <nav className="navbar navbar-expand-lg container-fluid">
+          <Link to="/" className="site-logo text-info fw-bold">
             Kaarel Viilvere
           </Link>
           <button
@@ -83,12 +83,12 @@ let currentYear = new Date().getFullYear()
           <div className="collapse navbar-collapse justify-content-end" id="mainNavbar" ref={navbarCollapseRef}>
             <div className="dropdown-menu-custom">
               <ul className="navbar-nav mb-2 mb-lg-0 ">
-                <li className="nav-item"><Link to="/" className={isActive("/")} onClick={closeNavbar}><i className="bi bi-house-door me-1"></i> Home</Link></li>
-                <li className="nav-item"><Link to="/projects" className={isActive("/projects")} onClick={closeNavbar}><i className="bi bi-kanban me-1"></i> Projects</Link></li>
+                <li className="nav-item ps-1"><Link to="/" className={isActive("/")} onClick={closeNavbar}><i className="bi bi-house-door me-1"></i>Home</Link></li>
+                <li className="nav-item"><Link to="/projects" className={isActive("/projects")} onClick={closeNavbar}><i className="bi bi-kanban me-1"></i>Projects</Link></li>
                 <li className="nav-item"><Link to="/about" className={isActive("/about")} onClick={closeNavbar}><i className="bi bi-person-badge me-1"></i> About</Link></li>
                 <li className="nav-item"><Link to="/contact" className={isActive("/contact")} onClick={closeNavbar}><i className="bi bi-envelope me-1"></i> Contact</Link></li>
                 <li className="nav-item"><Link to="/resume" className={isActive("/resume")} onClick={closeNavbar}><i className="bi bi-file-earmark-person me-1"></i> Resume</Link></li>
-                <li className="nav-item d-flex ma p-2" onClick={closeNavbar}><ThemeToggle /></li>
+                <li className="nav-item d-flex align-items-center pe-1" onClick={closeNavbar}><ThemeToggle /></li>
               </ul>
             </div>
           </div>

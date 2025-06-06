@@ -23,7 +23,6 @@ body.theme-light .card {
 }
 
 
-
 .theme-header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -58,8 +57,10 @@ body.theme-dark h2 {
 
 body.theme-dark .footer-text {
   color: #0dcaf0;
+  animation: fadeInUp 0.6s ease-out both;
 }
 
 body.theme-light .footer-text {
   color: #000000;
+
 }

@@ -73,6 +73,7 @@ body.theme-dark .filter-bar {
   padding-top: 1rem;
   padding-bottom: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
 }
 
 .sticky-header::after {
@@ -84,7 +85,7 @@ body.theme-dark .filter-bar {
 }
 
 body.theme-light .filter-btn {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
   padding: 0.4rem 1rem;
   border: 1px solid var(--bs-border-color);
@@ -95,7 +96,7 @@ body.theme-light .filter-btn {
 }
 
 body.theme-dark .filter-btn {
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 500;
   padding: 0.4rem 1rem;
   border: 1px solid var(--bs-border-color);
@@ -161,3 +162,17 @@ body.theme-dark .btn-contact{
 body.theme-light .btn-contact{
   color: #000000;
 }
+
+.full-text {
+  display: inline;
+}
+
+.emoji-only {
+  display: none;
+}
+
+.no-warp{
+  white-space: nowrap;
+}
+
+

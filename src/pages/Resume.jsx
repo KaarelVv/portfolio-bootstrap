@@ -1,31 +1,49 @@
+import { useEffect, useState } from "react";
 
+const resumePdf = "/portfolio/resume.pdf";
 
-const resumePdf = "/portfolio/resume.pdf"; // Place your resume.pdf in the public folder
+const Resume = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-const Resume = () => (
-    <div className="container my-5">
-        <h1 className="mb-4">My Resume</h1>
-        <div className="mb-3">
-            <a
-                href={resumePdf}
-                download="My_Resume.pdf"
-                className="btn btn-live btn-glow"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Download Resume (PDF)
-            </a>
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  return (
+    <div className="container my-5 fade-in-up">
+      <h2 className="hero-heading mb-3">My Resume</h2>
+
+      <div className="mb-3">
+        <a
+          href={resumePdf}
+          download="My_Resume.pdf"
+          className="btn btn-live btn-glow"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download Resume (PDF)
+        </a>
+      </div>
+
+      {isMobile ? (
+        <p className="modal-descripion  mt-3">
+          PDF preview is disabled on small screens. Please download the resume to view it.
+        </p>
+      ) : (
+        <div className="resume-viewer">
+          <iframe
+            src={resumePdf}
+            title="Resume"
+            className="responsive-pdf"
+            allowFullScreen
+          />
         </div>
-        <div style={{ height: "80vh", border: "1px solid #ccc" }}>
-            <iframe
-                src={resumePdf}
-                title="Resume"
-                width="100%"
-                height="100%"
-                style={{ border: "none" }}
-            />
-        </div>
+      )}
     </div>
-);
+  );
+};
 
 export default Resume;

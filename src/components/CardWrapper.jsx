@@ -5,7 +5,7 @@ export default function CardWrapper({ children }) {
       style={{
         maxWidth: "1600px",
         minHeight: "75vh", // or 100vh minus header if needed
-
+        transition: "all 0.5s ease",
       }}
     >
       {children}

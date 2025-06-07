@@ -4,3 +4,7 @@ body.theme-dark .theme-footer{
   padding: 1rem;
   text-align: center;
 }
+body.theme-light .theme-footer{
+  padding: 1rem;
+  text-align: center;
+}

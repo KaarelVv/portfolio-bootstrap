@@ -122,7 +122,7 @@ body.theme-light .filter-btn.active {
 }
 
 body.theme-dark .filter-btn.active {
-  background: linear-gradient(135deg, #0dcaf0, #6610f2);
+  background: linear-gradient(300deg, #0dcaf0, #6610f2);
   color: #ffffff;
   border-color: #0dcaf0;
   box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);

@@ -1,5 +1,3 @@
-/* === Mobile First Responsive Layouts === */
-
 
 /* ≤768px (sm) */
 @media (max-width: 768px) {
@@ -16,7 +14,7 @@
   header {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
+   
   }
 
   /* Dropdown menu customization */
@@ -60,7 +58,6 @@
   header {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
   }
 
   .dropdown-menu-custom {
@@ -116,11 +113,12 @@
   header {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
+    
   }
 
   .theme-header {
-    padding: 1px 0;
+    padding: 1rem 2rem;
+   
   }
 
   .dropdown-menu-custom {
@@ -169,12 +167,12 @@
   header {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
   }
 
   .terminal-box {
     font-size: 0.9rem;
     padding: 1rem;
+    margin: 0 0.5rem;
   }
 
   .command-list {
